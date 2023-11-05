@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &320018495
 Transform:
   m_ObjectHideFlags: 0
@@ -287,7 +287,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 55
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: e65ec3d3cbdbd3d46a0dedf8991a09c1, type: 2}
   m_TargetDisplay: 0
@@ -613,13 +613,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071065, z: -0, w: 0.7071071}
+  m_LocalRotation: {x: -0.02796009, y: -0.76180184, z: 0.054080676, w: 0.644943}
   m_LocalPosition: {x: -2.968, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 2.656, y: -99.348, z: 6.458}
 --- !u!1 &1223370123
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1315944348
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 1519582698}
   - component: {fileID: 1519582697}
   - component: {fileID: 1519582696}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MirrorPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
