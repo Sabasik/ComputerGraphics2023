@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "SpecialShading.sln"
+    "dotnet.defaultSolution": "ComputerGraphics2023.sln"
 }
