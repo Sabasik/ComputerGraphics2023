@@ -41,6 +41,7 @@ Shader "Unlit/MirrorShader"
             fixed4 frag(v2f i) : SV_Target
             {
                 float2 screenSpaceUV = i.screenPos.xy / i.screenPos.w;
+                screenSpaceUV.x = 1.0 - screenSpaceUV.x;
                 return tex2D(_MainTex, screenSpaceUV);
             }
             ENDCG
