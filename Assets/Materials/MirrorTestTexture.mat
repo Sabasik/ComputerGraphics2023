@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MirrorTexture
+  m_Name: MirrorTestTexture
   m_Shader: {fileID: 4800000, guid: c2611b7b607b8484384f7551d080b361, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0

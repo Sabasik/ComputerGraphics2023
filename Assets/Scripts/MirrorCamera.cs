@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class MirrorMovement : MonoBehaviour
 {
+    private Transform playerCamera;
     public Transform mirrorPlane;
-    public Transform playerCamera;
+
+    private Camera mirrorCamera;
+    private RenderTexture mirrorTexture;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerCamera = Camera.main.transform;
+        mirrorCamera = GetComponent<Camera>();
+
+        if (mirrorTexture != null)
+        {
+            mirrorTexture.Release();
+        }
+        mirrorTexture = new RenderTexture(Screen.width, Screen.height, 0);
+        mirrorCamera.targetTexture = mirrorTexture;
+        MeshRenderer mirrorRenderer = mirrorPlane.GetComponent<MeshRenderer>();
+        mirrorRenderer.material.SetTexture("_MainTex", mirrorTexture);
     }
 
     // Update is called once per frame
