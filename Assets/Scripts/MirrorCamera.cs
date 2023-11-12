@@ -7,12 +7,14 @@ public class MirrorMovement : MonoBehaviour
     private Transform playerCamera;
     public Transform mirrorPlane;
 
+    private Transform mirrorOrigin;
     private Camera mirrorCamera;
     private RenderTexture mirrorTexture;
 
     // Start is called before the first frame update
     void Start()
     {
+        mirrorOrigin = transform.parent;
         playerCamera = Camera.main.transform;
         mirrorCamera = GetComponent<Camera>();
 
@@ -29,13 +31,14 @@ public class MirrorMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 playerCamPosRelativeToMirror = mirrorPlane.InverseTransformPoint(playerCamera.position);
-        Vector3 mirroredPosRelativeToMirror = new Vector3(playerCamPosRelativeToMirror.x, -playerCamPosRelativeToMirror.y, playerCamPosRelativeToMirror.z);
-        transform.position = mirrorPlane.TransformPoint(mirroredPosRelativeToMirror);
+        Vector3 playerCamPosRelativeToMirror = mirrorOrigin.InverseTransformPoint(playerCamera.position);
+        Vector3 mirroredPosRelativeToMirror = new Vector3(playerCamPosRelativeToMirror.x, playerCamPosRelativeToMirror.y, -playerCamPosRelativeToMirror.z);
+        transform.position = mirrorOrigin.TransformPoint(mirroredPosRelativeToMirror);
 
-        Quaternion playerCamRotationRelativeToMirror = Quaternion.Inverse(mirrorPlane.rotation) * playerCamera.rotation;
+        Quaternion playerCamRotationRelativeToMirror = Quaternion.Inverse(mirrorOrigin.rotation) * playerCamera.rotation;
         Vector3 relativeRotationEuler = playerCamRotationRelativeToMirror.eulerAngles;
-        Vector3 relativeMirroredRotationEuler = new Vector3(-relativeRotationEuler.x, relativeRotationEuler.y, relativeRotationEuler.z);
-        transform.rotation = mirrorPlane.rotation * Quaternion.Euler(relativeMirroredRotationEuler);
+        Debug.Log(relativeRotationEuler);
+        Vector3 relativeMirroredRotationEuler = new Vector3(relativeRotationEuler.x, 180 - relativeRotationEuler.y, relativeRotationEuler.z);
+        transform.rotation = mirrorOrigin.rotation * Quaternion.Euler(relativeMirroredRotationEuler);
     }
 }
