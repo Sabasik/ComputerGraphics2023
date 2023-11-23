@@ -26,7 +26,6 @@ public class MirrorMovement : MonoBehaviour
         mirrorCamera.targetTexture = mirrorTexture;
         MeshRenderer mirrorRenderer = mirrorPlane.GetComponent<MeshRenderer>();
         mirrorRenderer.material.SetTexture("_MainTex", mirrorTexture);
-        mirrorRenderer.material.SetFloat("_RedMult", 0.2f);
     }
 
     // Update is called once per frame

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hitPoint, 100f))
         {
             hoveringInteractable = hitPoint.transform.gameObject.GetComponent<Interactable>();
-            Debug.Log(hoveringInteractable);
+            //Debug.Log(hoveringInteractable);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
