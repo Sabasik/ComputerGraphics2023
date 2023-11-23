@@ -3,6 +3,9 @@ Shader "Unlit/MirrorShader"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _RedMult ("Red multiplier", Float) = 1.0
+        _GreenMult ("Green multiplier", Float) = 1.0
+        _BlueMult ("Blue multiplier", Float) = 1.0
     }
     SubShader
     {
@@ -29,6 +32,9 @@ Shader "Unlit/MirrorShader"
             };
 
             sampler2D _MainTex;
+            float _RedMult;
+            float _GreenMult;
+            float _BlueMult;
 
             v2f vert (appdata v)
             {
@@ -42,7 +48,11 @@ Shader "Unlit/MirrorShader"
             {
                 float2 screenSpaceUV = i.screenPos.xy / i.screenPos.w;
                 screenSpaceUV.x = 1.0 - screenSpaceUV.x;
-                return tex2D(_MainTex, screenSpaceUV);
+                float4 texColour = tex2D(_MainTex, screenSpaceUV);
+                texColour.r *= _RedMult;
+                texColour.g *= _GreenMult;
+                texColour.b *= _BlueMult;
+                return texColour;
             }
             ENDCG
         }

@@ -26,6 +26,7 @@ public class MirrorMovement : MonoBehaviour
         mirrorCamera.targetTexture = mirrorTexture;
         MeshRenderer mirrorRenderer = mirrorPlane.GetComponent<MeshRenderer>();
         mirrorRenderer.material.SetTexture("_MainTex", mirrorTexture);
+        mirrorRenderer.material.SetFloat("_RedMult", 0.2f);
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class MirrorMovement : MonoBehaviour
 
         Quaternion playerCamRotationRelativeToMirror = Quaternion.Inverse(mirrorOrigin.rotation) * playerCamera.rotation;
         Vector3 relativeRotationEuler = playerCamRotationRelativeToMirror.eulerAngles;
-        Debug.Log(relativeRotationEuler);
+        
         Vector3 relativeMirroredRotationEuler = new Vector3(relativeRotationEuler.x, 180 - relativeRotationEuler.y, relativeRotationEuler.z);
         transform.rotation = mirrorOrigin.rotation * Quaternion.Euler(relativeMirroredRotationEuler);
     }
