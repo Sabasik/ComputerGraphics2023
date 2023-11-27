@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Interactable hoveringInteractable;
+    public Interactable currentlyInteractingInteractable;
 
     // Start is called before the first frame update
     void Start()
@@ -28,14 +29,16 @@ public class PlayerController : MonoBehaviour
             if (hoveringInteractable != null)
             {
                 hoveringInteractable.StartInteract();
+                currentlyInteractingInteractable = hoveringInteractable;
             }
         }
 
         if (Input.GetKeyUp(KeyCode.E))
         {
-            if (hoveringInteractable != null)
+            if (currentlyInteractingInteractable != null)
             {
-                hoveringInteractable.EndInteract();
+                currentlyInteractingInteractable.StopInteract();
+                currentlyInteractingInteractable = null;
             }
         }
     }

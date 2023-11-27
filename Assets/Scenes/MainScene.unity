@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798361953205560310, guid: 3591a07e3b874ef469bb6cb01fb92c2f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.17400002
       objectReference: {fileID: 0}
     - target: {fileID: 7798361953205560310, guid: 3591a07e3b874ef469bb6cb01fb92c2f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -391,8 +391,8 @@ GameObject:
   - component: {fileID: 304003058}
   - component: {fileID: 304003057}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: MirrorPanel
+  m_TagString: MirrorPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1415,7 +1415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798361953205560310, guid: 3591a07e3b874ef469bb6cb01fb92c2f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.17400002
       objectReference: {fileID: 0}
     - target: {fileID: 7798361953205560310, guid: 3591a07e3b874ef469bb6cb01fb92c2f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2045,6 +2045,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7a35cd9ecb6ee4d9a58ed76d534684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentlyInteractingInteractable: {fileID: 0}
 --- !u!1 &1853793422
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,7 +2097,7 @@ GameObject:
   - component: {fileID: 2027003131}
   - component: {fileID: 2027003130}
   m_Layer: 0
-  m_Name: MirrorPanel
+  m_Name: MirrorLeverMechanism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2160,7 +2161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798361953205560310, guid: 3591a07e3b874ef469bb6cb01fb92c2f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.174
       objectReference: {fileID: 0}
     - target: {fileID: 7798361953205560310, guid: 3591a07e3b874ef469bb6cb01fb92c2f, type: 3}
       propertyPath: m_LocalPosition.z
