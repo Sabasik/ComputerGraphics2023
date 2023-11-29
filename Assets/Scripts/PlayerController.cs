@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Interactable hoveringInteractable;
-    public Interactable currentlyInteractingInteractable;
+    private Interactable currentlyInteractingInteractable;
+
+    public float holdingDistance = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit hitPoint;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        
         if (Physics.Raycast(ray, out hitPoint, 100f))
         {
             hoveringInteractable = hitPoint.transform.gameObject.GetComponent<Interactable>();
@@ -40,6 +43,11 @@ public class PlayerController : MonoBehaviour
                 currentlyInteractingInteractable.StopInteract();
                 currentlyInteractingInteractable = null;
             }
+        }
+
+        if (currentlyInteractingInteractable != null && currentlyInteractingInteractable.isHoldable)
+        {
+            currentlyInteractingInteractable.transform.position = ray.GetPoint(holdingDistance);
         }
     }
 }
