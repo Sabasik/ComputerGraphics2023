@@ -29,16 +29,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (hoveringInteractable != null)
+            if (hoveringInteractable != null && currentlyInteractingInteractable == null)
             {
                 hoveringInteractable.StartInteract();
                 currentlyInteractingInteractable = hoveringInteractable;
-            }
-        }
-
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            if (currentlyInteractingInteractable != null)
+            } else if (currentlyInteractingInteractable != null)
             {
                 currentlyInteractingInteractable.StopInteract();
                 currentlyInteractingInteractable = null;
@@ -48,6 +43,39 @@ public class PlayerController : MonoBehaviour
         if (currentlyInteractingInteractable != null && currentlyInteractingInteractable.isHoldable)
         {
             currentlyInteractingInteractable.transform.position = ray.GetPoint(holdingDistance);
+
+            Transform currentHoldableTransform = currentlyInteractingInteractable.transform;
+
+            // Tilt
+            if (Input.GetKey(KeyCode.Keypad7))
+            {
+                currentlyInteractingInteractable.Rotate(currentHoldableTransform.right, -1);
+            }
+            if (Input.GetKey(KeyCode.Keypad9))
+            {
+                currentlyInteractingInteractable.Rotate(currentHoldableTransform.right, 1);
+            }
+
+            // Left-Right
+            if (Input.GetKey(KeyCode.Keypad4))
+            {
+                currentlyInteractingInteractable.Rotate(currentHoldableTransform.up, 1);
+            }
+            if (Input.GetKey(KeyCode.Keypad6))
+            {
+                currentlyInteractingInteractable.Rotate(currentHoldableTransform.up, -1);
+            }
+
+            // Roll
+            if (Input.GetKey(KeyCode.Keypad5))
+            {
+                currentlyInteractingInteractable.Rotate(currentHoldableTransform.forward, -1);
+            }
+            if (Input.GetKey(KeyCode.Keypad8))
+            {
+                currentlyInteractingInteractable.Rotate(currentHoldableTransform.forward, 1);
+            }
+
         }
     }
 }

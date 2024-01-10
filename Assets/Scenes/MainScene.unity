@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   controller: {fileID: 218059152}
   movementAreaLength: 0.5
   isRed: 0
@@ -690,6 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 1
+  rotatingSpeed: 1
 --- !u!54 &212846688
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1031,6 +1033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &304003055
@@ -1485,6 +1488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &444869566
@@ -1606,6 +1610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &445073755
@@ -1727,6 +1732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &485258158 stripped
@@ -1752,6 +1758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   controller: {fileID: 218059152}
   movementAreaLength: 0.5
   isRed: 1
@@ -1890,6 +1897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 1
+  rotatingSpeed: 1
 --- !u!54 &605837998
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2241,6 +2249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 1
+  rotatingSpeed: 1
 --- !u!54 &726704789
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2400,6 +2409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &777667741
@@ -2658,6 +2668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &963194225
@@ -2871,6 +2882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!4 &1132160562 stripped
@@ -3205,6 +3217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &1315944347
@@ -3796,6 +3809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
   colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &1573082599
@@ -3940,6 +3954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHoldable: 0
+  rotatingSpeed: 1
   controller: {fileID: 218059152}
   movementAreaLength: 0.5
   isRed: 0
