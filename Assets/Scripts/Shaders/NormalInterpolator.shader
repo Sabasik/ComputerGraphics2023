@@ -2,7 +2,7 @@ Shader "Custom/NormalInterpolator"
 {
     Properties
     {
-        _TargetVector ("Target vector", Vector) = (0, 0, 1)
+        _TargetVector ("Target vector", Vector) = (0.8, 0.8, 0)
     }
 
     SubShader {

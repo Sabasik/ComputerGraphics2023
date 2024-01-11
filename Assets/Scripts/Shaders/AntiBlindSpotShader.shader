@@ -1,11 +1,10 @@
-Shader "Unlit/MirrorShader"
+Shader "Unlit/AntiBlindSpotShader"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _RedMult ("Red multiplier", Float) = 1.0
-        _GreenMult ("Green multiplier", Float) = 1.0
-        _BlueMult ("Blue multiplier", Float) = 1.0
+        _AntiBlindSpotLoc ("Anti blind spot location", Vector) = (0, 0, 1)
+        _AntiBlindSpotColor ("Anti blind spot color", Color) = (0, 0, 0)
     }
     SubShader
     {
@@ -28,32 +27,32 @@ Shader "Unlit/MirrorShader"
 
             struct v2f
             {
-                float4 screenPos : TEXCOORD0;
+                float2 uv : TEXCOORD0;
+                float4 screenPos : TEXCOORD1;
                 float4 vertex : SV_POSITION;
             };
 
             sampler2D _MainTex;
-            float _RedMult;
-            float _GreenMult;
-            float _BlueMult;
+            float4 _MainTex_ST;
+            float2 _AntiBlindSpotLoc;
+            float4 _AntiBlindSpotColor;
 
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.screenPos = ComputeScreenPos(o.vertex);
+                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 return o;
             }
 
-            fixed4 frag(v2f i) : SV_Target
+            fixed4 frag (v2f i) : SV_Target
             {
+                fixed4 textureColor = tex2D(_MainTex, i.uv);
                 float2 screenSpaceUV = i.screenPos.xy / i.screenPos.w;
-                screenSpaceUV.x = 1.0 - screenSpaceUV.x;
-                float4 texColour = tex2D(_MainTex, screenSpaceUV);
-                texColour.r *= _RedMult;
-                texColour.g *= _GreenMult;
-                texColour.b *= _BlueMult;
-                return texColour;
+                float distanceFromSpot = sqrt(pow(screenSpaceUV.x - _AntiBlindSpotLoc.x, 2) + pow(screenSpaceUV.y - _AntiBlindSpotLoc.y, 2));
+                float colorAmountFromTexture = clamp(distanceFromSpot * 5, 0, 1);
+                return colorAmountFromTexture * textureColor + (1 - colorAmountFromTexture) * _AntiBlindSpotColor;
             }
             ENDCG
         }
