@@ -36,10 +36,12 @@ public class CheckBoxController : Interactable
                         transform.position = new Vector3(transform.position.x - 0.075f, transform.position.y, transform.position.z);
                         this.GetComponent<Renderer>().material = colorChecked;
                         isChecked = true;
+                        CheckCombination.checkCombination.doCheck();
                     } else {
                         transform.position = new Vector3(transform.position.x + 0.075f, transform.position.y, transform.position.z);
                         this.GetComponent<Renderer>().material = colorNotChecked;
                         isChecked = false;
+                        CheckCombination.checkCombination.doCheck();
                     }
                     break;
                 }
@@ -47,5 +49,9 @@ public class CheckBoxController : Interactable
             
             isMoving = false;
         }
+    }
+
+    public bool getCheck() {
+        return isChecked;
     }
 }
