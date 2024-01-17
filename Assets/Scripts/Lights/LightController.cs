@@ -7,6 +7,7 @@ public class LightController : MonoBehaviour
 
     public Light lightMain;
     public Light lightHalo;
+    public Material messageMaterial;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class LightController : MonoBehaviour
         color.r = redMultiplier;
         lightMain.color = color;
         lightHalo.color = color;
+        messageMaterial.SetFloat("_RedMult", redMultiplier);
     }
 
     public void UpdateGreenMultiplier(float greenMultiplier)
@@ -33,6 +35,7 @@ public class LightController : MonoBehaviour
         color.g = greenMultiplier;
         lightMain.color = color;
         lightHalo.color = color;
+        messageMaterial.SetFloat("_GreenMult", greenMultiplier);
     }
 
     public void UpdateBlueMultiplier(float blueMultiplier)
@@ -41,5 +44,6 @@ public class LightController : MonoBehaviour
         color.b = blueMultiplier;
         lightMain.color = color;
         lightHalo.color = color;
+        messageMaterial.SetFloat("_BlueMult", blueMultiplier);
     }
 }
