@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CheckBoxController : Interactable
 {
-    public Material colorChecked;
-    public Material colorNotChecked;
     private bool isMoving;
     private bool isChecked;
 
@@ -14,6 +13,7 @@ public class CheckBoxController : Interactable
     {
         isMoving = false;
         isChecked = false;
+        this.GetComponent<Renderer>().material.DOColor(Color.red, 1);
     }
 
     // Update is called once per frame
@@ -33,13 +33,13 @@ public class CheckBoxController : Interactable
                 if (hit.collider.name == this.gameObject.name)
                 {
                     if (!isChecked){
-                        transform.position = new Vector3(transform.position.x - 0.075f, transform.position.y, transform.position.z);
-                        this.GetComponent<Renderer>().material = colorChecked;
+                        transform.DOMoveX(transform.position.x - 0.075f, 1);
+                        this.GetComponent<Renderer>().material.DOColor(Color.yellow, 1);
                         isChecked = true;
                         CheckCombination.checkCombination.doCheck();
                     } else {
-                        transform.position = new Vector3(transform.position.x + 0.075f, transform.position.y, transform.position.z);
-                        this.GetComponent<Renderer>().material = colorNotChecked;
+                        transform.DOMoveX(transform.position.x + 0.075f, 1);
+                        this.GetComponent<Renderer>().material.DOColor(Color.red, 1);
                         isChecked = false;
                         CheckCombination.checkCombination.doCheck();
                     }
