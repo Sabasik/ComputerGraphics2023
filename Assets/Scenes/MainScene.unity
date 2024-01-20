@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.4483372, g: 0.49836844, b: 0.57560563, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -946,8 +946,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &304003055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,8 +1399,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &444869566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,8 +1519,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &445073755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,8 +1639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &476017014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2436,8 +2428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &777667741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,8 +2685,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,8 +3045,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!4 &1132160562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
@@ -3392,8 +3378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &1315944347
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,8 +3968,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHoldable: 0
   rotatingSpeed: 1
-  colorChecked: {fileID: 2100000, guid: e2e76c73bd771cd47ab042f9b4f8d28d, type: 2}
-  colorNotChecked: {fileID: 2100000, guid: 1e05595e64019d5429f94b23d9c6d9df, type: 2}
 --- !u!1 &1573082599
 GameObject:
   m_ObjectHideFlags: 0
@@ -4353,6 +4335,67 @@ Transform:
   - {fileID: 1541826216}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -71.334, z: 0}
+--- !u!1001 &1902269077
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.43493485
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.281
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4258411891960909470, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f98813dc4f469894e985180375b9bb41, type: 3}
+      propertyPath: m_Name
+      value: knight_statue
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f98813dc4f469894e985180375b9bb41, type: 3}
 --- !u!4 &1931401836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7798361953205560310, guid: 3591a07e3b874ef469bb6cb01fb92c2f, type: 3}
@@ -4617,3 +4660,4 @@ SceneRoots:
   - {fileID: 1949042106}
   - {fileID: 218059151}
   - {fileID: 46514375}
+  - {fileID: 1902269077}
