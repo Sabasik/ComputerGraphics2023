@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Device;
 
-public class LightLeverScript : Interactable
+public class LightLeverScript : Holdable
 {
     public LightController controller;
     public float movementAreaLength;
@@ -54,13 +54,13 @@ public class LightLeverScript : Interactable
 
     }
 
-    public override void StartInteract()
+    public override void StartHolding()
     {
         isMoving = true;
 
     }
 
-    public override void StopInteract()
+    public override void StopHolding()
     {
         isMoving = false;
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MirrorLever : Interactable
+public class MirrorLever : Holdable
 {
     public bool isRed;
     public bool isGreen;
@@ -54,13 +54,13 @@ public class MirrorLever : Interactable
         }
     }
 
-    public override void StartInteract()
+    public override void StartHolding()
     {
         isMoving = true;
         
     }
 
-    public override void StopInteract()
+    public override void StopHolding()
     {
         isMoving = false;
     }

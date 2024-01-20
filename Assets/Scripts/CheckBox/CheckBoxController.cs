@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class CheckBoxController : Interactable
+public class CheckBoxController : Holdable
 {
     private bool isMoving;
     private bool isChecked;

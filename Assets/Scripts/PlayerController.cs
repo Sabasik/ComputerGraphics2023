@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Holdable hoveringHoldable;
+    private Holdable currentlyHoldingHoldable;
+
     private Interactable hoveringInteractable;
-    private Interactable currentlyInteractingInteractable;
 
     public float holdingDistance = 1f;
 
@@ -23,57 +25,63 @@ public class PlayerController : MonoBehaviour
         
         if (Physics.Raycast(ray, out hitPoint, 100f))
         {
+            hoveringHoldable = hitPoint.transform.gameObject.GetComponent<Holdable>();
             hoveringInteractable = hitPoint.transform.gameObject.GetComponent<Interactable>();
-            //Debug.Log(hoveringInteractable);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (hoveringInteractable != null && currentlyInteractingInteractable == null)
+            if (hoveringHoldable != null && currentlyHoldingHoldable == null)
             {
-                hoveringInteractable.StartInteract();
-                currentlyInteractingInteractable = hoveringInteractable;
-            } else if (currentlyInteractingInteractable != null)
+                hoveringHoldable.StartHolding();
+                currentlyHoldingHoldable = hoveringHoldable;
+            } else if (currentlyHoldingHoldable != null)
             {
-                currentlyInteractingInteractable.StopInteract();
-                currentlyInteractingInteractable = null;
+                currentlyHoldingHoldable.StopHolding();
+                currentlyHoldingHoldable = null;
+            }
+
+            if (hoveringInteractable != null)
+            {
+                hoveringInteractable.Interact(this);
+                Debug.Log("Interacting with " + hoveringInteractable.name);
             }
         }
 
-        if (currentlyInteractingInteractable != null && currentlyInteractingInteractable.isHoldable)
+        if (currentlyHoldingHoldable != null && currentlyHoldingHoldable.freelyMovable)
         {
-            currentlyInteractingInteractable.transform.position = ray.GetPoint(holdingDistance);
+            currentlyHoldingHoldable.transform.position = ray.GetPoint(holdingDistance);
 
-            Transform currentHoldableTransform = currentlyInteractingInteractable.transform;
+            Transform currentHoldableTransform = currentlyHoldingHoldable.transform;
 
             // Tilt
             if (Input.GetKey(KeyCode.Keypad7))
             {
-                currentlyInteractingInteractable.Rotate(currentHoldableTransform.right, -1);
+                currentlyHoldingHoldable.Rotate(currentHoldableTransform.right, -1);
             }
             if (Input.GetKey(KeyCode.Keypad9))
             {
-                currentlyInteractingInteractable.Rotate(currentHoldableTransform.right, 1);
+                currentlyHoldingHoldable.Rotate(currentHoldableTransform.right, 1);
             }
 
             // Left-Right
             if (Input.GetKey(KeyCode.Keypad4))
             {
-                currentlyInteractingInteractable.Rotate(currentHoldableTransform.up, 1);
+                currentlyHoldingHoldable.Rotate(currentHoldableTransform.up, 1);
             }
             if (Input.GetKey(KeyCode.Keypad6))
             {
-                currentlyInteractingInteractable.Rotate(currentHoldableTransform.up, -1);
+                currentlyHoldingHoldable.Rotate(currentHoldableTransform.up, -1);
             }
 
             // Roll
             if (Input.GetKey(KeyCode.Keypad5))
             {
-                currentlyInteractingInteractable.Rotate(currentHoldableTransform.forward, -1);
+                currentlyHoldingHoldable.Rotate(currentHoldableTransform.forward, -1);
             }
             if (Input.GetKey(KeyCode.Keypad8))
             {
-                currentlyInteractingInteractable.Rotate(currentHoldableTransform.forward, 1);
+                currentlyHoldingHoldable.Rotate(currentHoldableTransform.forward, 1);
             }
 
         }
