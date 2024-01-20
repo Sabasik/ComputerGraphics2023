@@ -12,7 +12,8 @@ public class MirrorPanel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mirrorMaterial = mirrorPlane.GetComponent<MeshRenderer>().material;
+        //mirrorMaterial = mirrorPlane.GetComponent<MeshRenderer>().material;
+        mirrorMaterial = mirrorPlane.GetComponent<MeshRenderer>().materials[1];
     }
 
     // Update is called once per frame
