@@ -46,11 +46,11 @@ public class ColorPicker : MonoBehaviour
         float x = point.x - gameObject.transform.position.x;
         float y = point.y - gameObject.transform.position.y;
         float z = point.z - gameObject.transform.position.z;
+
+        // find x/z distance from center
+        x = calculateHypothenus(x, z);
+        if (z < 0) { x *= -1; } // hack
         
-        if (x <= 0.03f && x >= -0.03f) // for atan2 simplicity it will always be vertical and at a straight angle
-        {
-            x = z;
-        }
         // normalize to 0..1
         x += 0.5f;
         y += 0.5f;
@@ -69,5 +69,10 @@ public class ColorPicker : MonoBehaviour
         hue = hue / tau;
         Debug.Log("x: " + x + " | y: " + y + " | hue: " + hue);
         return Color.HSVToRGB(hue, 1, 1);
+    }
+
+    private float calculateHypothenus(float x, float y)
+    {
+        return (float)Math.Sqrt(x * x + y * y);
     }
 }
