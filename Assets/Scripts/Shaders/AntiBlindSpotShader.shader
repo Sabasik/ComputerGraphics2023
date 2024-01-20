@@ -2,9 +2,9 @@ Shader "Unlit/AntiBlindSpotShader"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex ("Main texture", 2D) = "white" {}
+        _HiddenTex ("Hidden texture", 2D) = "white" {}
         _AntiBlindSpotLoc ("Anti blind spot location", Vector) = (0, 0, 1)
-        _AntiBlindSpotColor ("Anti blind spot color", Color) = (0, 0, 0)
     }
     SubShader
     {
@@ -33,9 +33,9 @@ Shader "Unlit/AntiBlindSpotShader"
             };
 
             sampler2D _MainTex;
+            sampler2D _HiddenTex;
             float4 _MainTex_ST;
             float2 _AntiBlindSpotLoc;
-            float4 _AntiBlindSpotColor;
 
             v2f vert (appdata v)
             {
@@ -48,11 +48,12 @@ Shader "Unlit/AntiBlindSpotShader"
 
             fixed4 frag (v2f i) : SV_Target
             {
-                fixed4 textureColor = tex2D(_MainTex, i.uv);
+                fixed4 mainTexCol = tex2D(_MainTex, i.uv);
+                fixed4 hiddenTexCol = tex2D(_HiddenTex, i.uv);
                 float2 screenSpaceUV = i.screenPos.xy / i.screenPos.w;
                 float distanceFromSpot = sqrt(pow(screenSpaceUV.x - _AntiBlindSpotLoc.x, 2) + pow(screenSpaceUV.y - _AntiBlindSpotLoc.y, 2));
-                float colorAmountFromTexture = clamp(distanceFromSpot * 5, 0, 1);
-                return colorAmountFromTexture * textureColor + (1 - colorAmountFromTexture) * _AntiBlindSpotColor;
+                float colorAmountFromMainTex = clamp(distanceFromSpot * 5, 0, 1);
+                return colorAmountFromMainTex * mainTexCol + (1 - colorAmountFromMainTex) * hiddenTexCol;
             }
             ENDCG
         }
