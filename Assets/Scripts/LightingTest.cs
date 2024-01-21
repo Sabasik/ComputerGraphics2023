@@ -12,11 +12,12 @@ public class LightingTest : MonoBehaviour
 
     private float timeCounter = 0f;
     private float angle = 0f;
+    private float intensity = 3.5f;
 
     void Start()
     {
         // reset to white
-        lightMaterial.SetColor("_EmissionColor", Color.white);
+        lightMaterial.SetColor("_EmissionColor", Color.white * intensity);
     }
 
     void Update()
