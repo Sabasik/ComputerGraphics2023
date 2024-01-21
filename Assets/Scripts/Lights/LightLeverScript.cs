@@ -16,8 +16,10 @@ public class LightLeverScript : Holdable
     private float minPos;
     private float posDiff;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         isMoving = false;
         maxPos = transform.position.y;
         minPos = transform.position.y - movementAreaLength;

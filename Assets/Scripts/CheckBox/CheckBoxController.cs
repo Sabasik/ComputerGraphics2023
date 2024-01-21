@@ -9,8 +9,10 @@ public class CheckBoxController : Holdable
     private bool isChecked;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         isMoving = false;
         isChecked = false;
         this.GetComponent<Renderer>().material.DOColor(Color.red, 1);
