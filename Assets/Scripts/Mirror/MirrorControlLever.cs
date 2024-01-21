@@ -18,10 +18,11 @@ public class MirrorLever : Holdable
     public string mirrorPanelTag = "MirrorPanel";
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        isMoving = false;
+        base.Start();
 
+        isMoving = false;
         maxPos = transform.position.y;
         minPos = transform.position.y - movementAreaLength;
         posDiff = maxPos - minPos;
