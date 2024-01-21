@@ -12,6 +12,7 @@ public class ColorPicker : MonoBehaviour
     public Light lightParent;
     public Material lightSphereMaterial;
     public Material messageMaterial;
+    public Transform dotTransform;
 
     private float intensity = 3.5f;
 
@@ -33,6 +34,7 @@ public class ColorPicker : MonoBehaviour
                 color = getColorAtPoint(hit.point);
                 lightParent.color = color;
                 lightSphereMaterial.SetColor("_EmissionColor", color * intensity);
+                dotTransform.transform.position = hit.point;
 
                 messageMaterial.SetFloat("_RedMult", color.r);
                 messageMaterial.SetFloat("_GreenMult", color.g);
