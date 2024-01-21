@@ -19,7 +19,7 @@ public class ColorPicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Input.GetMouseButton(0)) { return; }
+        if (!Input.GetMouseButton(0) && !Input.GetKey(KeyCode.E)) { return; }
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

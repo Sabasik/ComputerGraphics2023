@@ -21,7 +21,7 @@ public class CheckBoxController : Holdable
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !isMoving)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E)) && !isMoving)
         {
             isMoving = true;
             
