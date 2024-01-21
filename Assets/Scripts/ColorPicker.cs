@@ -11,8 +11,10 @@ public class ColorPicker : MonoBehaviour
 { 
     public Color color;
     public Light lightParent;
-    public Light lightHalo;
+    public Material lightSphereMaterial;
     public Material messageMaterial;
+
+    private float intensity = 3.5f;
 
     // Update is called once per frame
     void Update()
@@ -30,9 +32,9 @@ public class ColorPicker : MonoBehaviour
             {
                 // print out coordinates
                 color = getColorAtPoint(hit.point);
-                lightParent.color = color; 
-                lightHalo.color = color;
-                
+                lightParent.color = color;
+                lightSphereMaterial.SetColor("_EmissionColor", color * intensity);
+
                 messageMaterial.SetFloat("_RedMult", color.r);
                 messageMaterial.SetFloat("_GreenMult", color.g);
                 messageMaterial.SetFloat("_BlueMult", color.b);
