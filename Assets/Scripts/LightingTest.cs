@@ -7,7 +7,6 @@ public class LightingTest : MonoBehaviour
     public Transform centerPoint;
     public float radius = 2f;
     public float moveSpeed = 2f;
-    public float colorChangeSpeed = 1f;
     public Material lightMaterial;
 
     private float timeCounter = 0f;
