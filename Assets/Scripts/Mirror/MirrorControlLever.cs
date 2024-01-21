@@ -14,14 +14,13 @@ public class MirrorLever : Holdable
     private float minPos;
     private float posDiff;
 
-    private MirrorPanel mirrorPanel;
+    public MirrorPanel mirrorPanel;
     public string mirrorPanelTag = "MirrorPanel";
 
     // Start is called before the first frame update
     void Start()
     {
         isMoving = false;
-        mirrorPanel = GameObject.Find("MirrorLeverMechanism").GetComponent<MirrorPanel>();
 
         maxPos = transform.position.y;
         minPos = transform.position.y - movementAreaLength;
@@ -57,7 +56,7 @@ public class MirrorLever : Holdable
     public override void StartHolding()
     {
         isMoving = true;
-        
+        Debug.Log("start holding mirror control lever");
     }
 
     public override void StopHolding()
