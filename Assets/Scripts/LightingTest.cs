@@ -8,10 +8,16 @@ public class LightingTest : MonoBehaviour
     public float radius = 2f;
     public float moveSpeed = 2f;
     public float colorChangeSpeed = 1f;
-    public Light haloLight;
+    public Material lightMaterial;
 
     private float timeCounter = 0f;
     private float angle = 0f;
+
+    void Start()
+    {
+        // reset to white
+        lightMaterial.SetColor("_EmissionColor", Color.white);
+    }
 
     void Update()
     {
@@ -22,14 +28,6 @@ public class LightingTest : MonoBehaviour
         // Update light position
         transform.position = new Vector3(x, transform.position.y, z);
 
-        // Smoothly change light color through RGB spectrum
-        //float hue = Mathf.PingPong(timeCounter * colorChangeSpeed, 1f);
-        //Color newColor = Color.HSVToRGB(hue, 1f, 1f);
-
-        //GetComponent<Light>().color = newColor;
-        //haloLight.color = newColor;
-
-        // Increment time counter for animation
         timeCounter += Time.deltaTime;
 
         angle += moveSpeed * Time.deltaTime;
