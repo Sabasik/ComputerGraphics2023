@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
 
     private Interactable hoveringInteractable;
 
-    public float holdingDistance = 1f;
+    public float interactRange = 3f;
+    public float holdingDistance = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,14 @@ public class PlayerController : MonoBehaviour
         RaycastHit hitPoint;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         
-        if (Physics.Raycast(ray, out hitPoint, 100f))
+        if (Physics.Raycast(ray, out hitPoint, interactRange))
         {
             hoveringHoldable = hitPoint.collider.gameObject.GetComponent<Holdable>();
             hoveringInteractable = hitPoint.collider.gameObject.GetComponent<Interactable>();
+        } else
+        {
+            hoveringHoldable = null;
+            hoveringInteractable = null;
         }
 
         if (Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0))
@@ -50,7 +55,8 @@ public class PlayerController : MonoBehaviour
 
         if (currentlyHoldingHoldable != null && currentlyHoldingHoldable.freelyMovable)
         {
-            currentlyHoldingHoldable.transform.position = ray.GetPoint(holdingDistance);
+            currentlyHoldingHoldable.MoveTowards(ray.GetPoint(holdingDistance));
+            //currentlyHoldingHoldable.transform.position = ray.GetPoint(holdingDistance);
 
             Transform currentHoldableTransform = currentlyHoldingHoldable.transform;
 

@@ -7,7 +7,8 @@ public class Holdable : MonoBehaviour
     protected Rigidbody rigidBody;
 
     public bool freelyMovable = false;
-    public float rotatingSpeed = 1;
+    public float movingSpeed = 10f;
+    public float rotatingSpeed = 1f;
 
     protected virtual void Start()
     {
@@ -28,6 +29,11 @@ public class Holdable : MonoBehaviour
         {
             rigidBody.useGravity = true;
         }
+    }
+
+    public void MoveTowards(Vector3 point)
+    {
+        rigidBody.velocity = (point - transform.position) * movingSpeed;
     }
 
     public void Rotate(Vector3 rotationAxis, int modifier)
